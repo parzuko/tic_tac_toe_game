@@ -1,0 +1,67 @@
+# --------------------Global Variables-----------------
+
+# Game board
+board = ['-','-', '-',
+        '-', '-', '-',
+        '-', '-', '-',]
+
+# If game still going 
+game_is_still_going = True
+
+#Who won? or tie??
+winner = None 
+
+#Who's Player One 
+current_player = "X"
+def display_board ():
+    print(board[0] + " | " + board[1] + " | " + board[2])
+    print(board[3] + " | " + board[4] + " | " + board[5])
+    print(board[6] + " | " + board[7] + " | " + board[8])
+
+def play_game() :
+    # Displaying Initial Board
+    display_board()
+
+    while game_is_still_going :
+
+        handle_turn(current_player)
+
+        check_if_game_over()
+
+        flip_player()
+
+# The game has ended 
+if winner == "X" or winner == "O":
+    print(winner + "WON!")
+elif winner == None:
+    print("It's a tie :(((((")
+#Inputing the first "X" according to the user's wish
+
+def handle_turn (player):
+    position = input("Enter a postion from 1-9: ")
+    position = int(position) - 1
+
+    board[position] = "X"
+    display_board() 
+
+
+def check_if_game_over():
+    check_if_win()
+    check_if_tie()
+
+def check_if_win(): 
+    # check rows 
+    # check columns 
+    # check diagnols
+    return
+
+def check_if_tie():
+    return
+
+def flip_player():
+    return
+
+
+
+
+play_game() 
